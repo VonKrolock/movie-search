@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Movie Search</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-5">
+     <h2>MovieSearch</h2>
+    </nav>
+  </header>
+
+  <main class="container mt-3"> 
+    <form>
+      <div class="d-flex justify-content-around m-2 p-2">
+        <input type="search" class="form-control" id="searchTerm" autocomplete="off" autofocus="autofocus" placeholder="Enter a movie title">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+    
+      <button class="carousel__button previous" id="previous"><</button>
+      <button class="carousel__button next" id="next">></button>
+      <section id="results"></section>
+
+      <div class="carousel">
+        <div class="carousel__images">
+
+          <div class="cards p-4 w-25">
+                  <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BNzFjZmM1ODgtMDBkMS00NWFlLTg2YmUtZjc3ZTgxMjE1OTI2L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_SX650_AL_.jpg" alt=""></a> 
+              <div class="mt-3">
+                  <a class="link__imdb" href="https://www.imdb.com/title/tt0087800/?ref_=nv_sr_srsg_0" target="__blank">IMDb</a>
+                  <h5 class="mt-2">A Nightmare on Elm street</h5>
+                  <p>1984</p>  
+              </div>
+          </div>
+
+
+          <div class="cards p-4 w-25">
+                  <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BNzk1OGU2NmMtNTdhZC00NjdlLWE5YTMtZTQ0MGExZTQzOGQyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a> 
+              <div class="mt-3">
+                  <a class="link__imdb" href="https://www.imdb.com/title/tt0077651/?ref_=nv_sr_srsg_6" target="__blank">IMDb</a>
+                  <h5 class="mt-2">Halloween</h5>
+                  <p>1978</p>  
+              </div>
+         </div>
+
+
+        <div class="cards p-4 w-25">
+                <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BNDRjNjRlNmYtZGVkOS00ODA1LWFmMTEtZmY1MWY5ZGM5OWUxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,639,1000_AL_.jpg" alt=""></a> 
+            <div class="mt-3">
+                <a class="link__imdb" href="https://www.imdb.com/title/tt0089885/?ref_=nv_sr_srsg_0" target="__blank">IMDb</a>
+                <h5 class="mt-2">Re-Animator</h5>
+                <p>1985</p>  
+            </div>
+       </div>
+      
+
+       <div class="cards p-4 w-25">
+               <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BYjBlNTBhYWQtMzg5Yi00NDA2LWJmMjYtZmM0ODhiYzkwYmY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a> 
+           <div class="mt-3">
+                <a class="link__imdb" href="https://www.imdb.com/title/tt0098084/?ref_=nv_sr_srsg_3" target="__blank">IMDb</a>
+                <h5 class="mt-2">Pet Sematary</h5>
+                <p>1989</p>  
+           </div>
+       </div>
+          
+       
+       <div class="cards p-4 w-25">
+               <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX669_CR0,0,669,999_AL_.jpg" alt=""></a> 
+          <div class="mt-3">
+              <a class="link__imdb" href="https://www.imdb.com/title/tt0080761/?ref_=nv_sr_srsg_3" target="__blank">IMDb</a>
+              <h5 class="mt-2">Friday the 13th</h5>
+              <p>1980</p>  
+         </div>
+      </div>
+          
+
+       <div class="cards p-4 w-25">
+               <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BZGU1MjNiYWYtNGQ5MS00MTgzLTlkYjItZDhhNTdlMTkxZGVlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,676,1000_AL_.jpg" alt=""></a> 
+          <div class="mt-3">
+              <a class="link__imdb" href="https://www.imdb.com/title/tt0094862/?ref_=nv_sr_srsg_4" target="__blank">IMDb</a>
+              <h5 class="mt-2">Child's Play</h5>
+              <p>1988</p>  
+          </div>
+       </div>
+
+
+       <div class="cards p-4 w-25">
+               <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BYjVjYjhlNTQtN2UxOC00Njk5LWFjNDctODNjZTI1ZGM0ZDZkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg" alt=""></a> 
+          <div class="mt-3">
+              <a class="link__imdb" href="https://www.imdb.com/title/tt0103919/?ref_=nv_sr_srsg_0" target="__blank">IMDb</a>
+              <h5 class="mt-2">Candyman</h5>
+              <p>1992</p>  
+         </div>
+       </div>
+
+
+       <div class="cards p-4 w-25">
+               <a class="link__imdb__card" href="http://imdb.com/title/${movie.imdbID}" target="__blank"><img class="card-top" src="https://m.media-amazon.com/images/M/MV5BNzYxZTE2ZWYtMGYxNS00OTFlLTkyYmMtYzVkZjI0ZTdmYzdkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a> 
+          <div class="mt-3">
+              <a class="link__imdb" href="https://www.imdb.com/title/tt0100258/?ref_=nv_sr_srsg_7" target="__blank">IMDb</a>
+              <h5 class="mt-2">Night of the Living Dead</h5>
+              <p>1990</p>  
+         </div>
+      </div>
+    </div>
+</main>
+
+<footer class="py-4 text-white-50">
+  <div class="container text-center">
+    <a href="https://github.com/rolling-scopes-school/tasks/blob/master/tasks/movie-search.md">RSSCHOOL</a>
+    <a href="https://github.com/VonKrolock"><i class="fab fa-github"></i>GitHub</a>
+  </div>
+</footer>
+  <script src="app.js"></script>
+</body>
+</html>
